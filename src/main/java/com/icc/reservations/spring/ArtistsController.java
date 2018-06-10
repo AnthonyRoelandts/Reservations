@@ -23,7 +23,7 @@ public class ArtistsController {
         this.artistsService = artistsService;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/artists", method = RequestMethod.GET)
     public String listArtists(Model model) {
         model.addAttribute("artist", new Artists());
         model.addAttribute("listArtists", this.artistsService.listArtists());
@@ -48,7 +48,6 @@ public class ArtistsController {
 
     @RequestMapping("/remove/{id}")
     public String removeArtist(@PathVariable("id") int id) {
-
         this.artistsService.removeArtist(id);
         return "redirect:/artists";
     }

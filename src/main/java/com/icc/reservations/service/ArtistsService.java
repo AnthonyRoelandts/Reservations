@@ -1,9 +1,12 @@
 package com.icc.reservations.service;
 
+import com.icc.reservations.model.Artists;
 import java.util.List;
 
-import com.icc.reservations.model.Artists;
-
+/**
+ *
+ * @author antho
+ */
 public interface ArtistsService {
 
     void addArtist(Artists a);
