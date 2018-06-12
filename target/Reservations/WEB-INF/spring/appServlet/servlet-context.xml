@@ -66,6 +66,12 @@
     <beans:bean id="artistsService" class="com.icc.reservations.service.ArtistsServiceImpl">
         <beans:property name="artistsRepository" ref="artistsRepository"></beans:property>
     </beans:bean>
+    <beans:bean id="usersRepository" class="com.icc.reservations.repository.UsersRepositoryImpl">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </beans:bean>
+    <beans:bean id="usersService" class="com.icc.reservations.service.UsersServiceImpl">
+        <beans:property name="usersRepository" ref="usersRepository"></beans:property>
+    </beans:bean>
     <context:component-scan base-package="com.icc.reservations.spring" />
 	
     <tx:annotation-driven transaction-manager="transactionManager"/>

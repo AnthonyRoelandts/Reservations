@@ -113,7 +113,7 @@ public class Localities implements Serializable {
 
     @Override
     public String toString() {
-        return "com.journaldev.spring.model.Localities[ id=" + id + " ]";
+        return "Localities[ id=" + id + " ]";
     }
 
 }

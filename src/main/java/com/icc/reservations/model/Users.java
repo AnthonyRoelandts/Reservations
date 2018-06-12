@@ -163,7 +163,7 @@ public class Users implements Serializable {
 
     @Override
     public String toString() {
-        return "com.journaldev.spring.model.Users[ id=" + id + " ]";
+        return "Users[ id=" + id + " ]";
     }
 
 }

@@ -176,7 +176,7 @@ public class Locations implements Serializable {
 
     @Override
     public String toString() {
-        return "com.journaldev.spring.model.Locations[ id=" + id + " ]";
+        return "Locations[ id=" + id + " ]";
     }
 
 }

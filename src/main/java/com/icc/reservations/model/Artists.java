@@ -113,7 +113,7 @@ public class Artists implements Serializable {
 
     @Override
     public String toString() {
-        return "com.journaldev.spring.model.Artists[ id=" + id + " ]";
+        return "Artists[ id=" + id + " ]";
     }
 
 }

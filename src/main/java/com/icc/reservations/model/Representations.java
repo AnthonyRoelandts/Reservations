@@ -113,7 +113,7 @@ public class Representations implements Serializable {
 
     @Override
     public String toString() {
-        return "com.journaldev.spring.model.Representations[ id=" + id + " ]";
+        return "Representations[ id=" + id + " ]";
     }
 
 }

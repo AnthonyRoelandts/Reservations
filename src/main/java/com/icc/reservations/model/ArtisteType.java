@@ -92,7 +92,7 @@ public class ArtisteType implements Serializable {
 
     @Override
     public String toString() {
-        return "com.journaldev.spring.model.ArtisteType[ id=" + id + " ]";
+        return "ArtisteType[ id=" + id + " ]";
     }
 
 }

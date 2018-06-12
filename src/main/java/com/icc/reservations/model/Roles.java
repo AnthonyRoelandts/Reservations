@@ -100,7 +100,7 @@ public class Roles implements Serializable {
 
     @Override
     public String toString() {
-        return "com.journaldev.spring.model.Roles[ id=" + id + " ]";
+        return "Roles[ id=" + id + " ]";
     }
 
 }

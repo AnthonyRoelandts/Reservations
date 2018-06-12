@@ -10,7 +10,7 @@
             <%-- add class="active" to li to make current page highlighted--%>
             <li><a href="${baseURL}">Accueil</a></li>
             <li><a href="${baseURL}/artists">Artistes</a></li>
-            <li><a href="#">Page 2</a></li>
+            <li><a href="${baseURL}/login">Login</a></li>
             <li><a href="#">Page 3</a></li>
         </ul>
     </div>

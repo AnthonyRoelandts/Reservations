@@ -167,7 +167,7 @@ public class Shows implements Serializable {
 
     @Override
     public String toString() {
-        return "com.journaldev.spring.model.Shows[ id=" + id + " ]";
+        return "Shows[ id=" + id + " ]";
     }
 
 }

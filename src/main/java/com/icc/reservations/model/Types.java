@@ -100,7 +100,7 @@ public class Types implements Serializable {
 
     @Override
     public String toString() {
-        return "com.journaldev.spring.model.Types[ id=" + id + " ]";
+        return "Types[ id=" + id + " ]";
     }
 
 }

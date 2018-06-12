@@ -8,9 +8,11 @@ import com.icc.reservations.model.Users;
  */
 public interface UsersRepository {
 
-    void addUser(Users u);
+    Users addUser(Users u);
 
     void updateUser(Users u);
 
     Users getUserById(Integer id);
+
+    Users getUserByLoginAndDecryptedPassword(String login, String pwd);
 }
