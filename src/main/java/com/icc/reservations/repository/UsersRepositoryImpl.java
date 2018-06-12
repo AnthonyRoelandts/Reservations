@@ -42,7 +42,7 @@ public class UsersRepositoryImpl implements UsersRepository {
     @Override
     public Users getUserByLoginAndDecryptedPassword(String login, String pwd) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from users as u where u.login = :login and u.password = :pwd");
+        Query query = session.createQuery("from Users where login = :login and password = :pwd");
         query.setParameter("login", login);
         query.setParameter("pwd", pwd);
         List list = query.list();

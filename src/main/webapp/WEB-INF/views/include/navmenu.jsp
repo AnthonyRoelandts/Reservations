@@ -11,7 +11,7 @@
             <li><a href="${baseURL}">Accueil</a></li>
             <li><a href="${baseURL}/artists">Artistes</a></li>
             <li><a href="${baseURL}/login">Login</a></li>
-            <li><a href="#">Page 3</a></li>
+            <li><a href="${baseURL}/register">S'enregistrer</a></li>
         </ul>
     </div>
 </nav>

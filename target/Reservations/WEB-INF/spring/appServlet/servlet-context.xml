@@ -72,7 +72,13 @@
     <beans:bean id="usersService" class="com.icc.reservations.service.UsersServiceImpl">
         <beans:property name="usersRepository" ref="usersRepository"></beans:property>
     </beans:bean>
-    <context:component-scan base-package="com.icc.reservations.spring" />
+        <beans:bean id="rolesRepository" class="com.icc.reservations.repository.RolesRepositoryImpl">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </beans:bean>
+    <beans:bean id="rolesService" class="com.icc.reservations.service.RolesServiceImpl">
+        <beans:property name="rolesRepository" ref="rolesRepository"></beans:property>
+    </beans:bean>
+    <context:component-scan base-package="com.icc.reservations" />
 	
     <tx:annotation-driven transaction-manager="transactionManager"/>
 	

@@ -6,12 +6,14 @@ import com.icc.reservations.utils.EncryptionUtils;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author antho
  */
 @Service
+@Transactional
 public class UsersServiceImpl implements UsersService {
 
     private UsersRepository usersRepository;
@@ -23,7 +25,7 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public Users addUser(Users u) {
         try {
-            u.setPassword(EncryptionUtils.encrypt(u.getPassword()));
+            u.setPassword(EncryptionUtils.base64encode(u.getPassword()));
             u = this.usersRepository.addUser(u);
         } catch (Exception ex) {
             Logger.getLogger(UsersServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
@@ -40,7 +42,7 @@ public class UsersServiceImpl implements UsersService {
     public Users getUserById(Integer id) {
         Users u = this.usersRepository.getUserById(id);
         try {
-            u.setPassword(EncryptionUtils.decrypt(u.getPassword()));
+            u.setPassword(EncryptionUtils.base64decode(u.getPassword()));
         } catch (Exception ex) {
             Logger.getLogger(UsersServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -51,7 +53,7 @@ public class UsersServiceImpl implements UsersService {
     public Users getUserByLoginAndDecryptedPassword(String login, String pwd) {
         Users u = null;
         try {
-            u = this.usersRepository.getUserByLoginAndDecryptedPassword(login, EncryptionUtils.encrypt(pwd));
+            u = this.usersRepository.getUserByLoginAndDecryptedPassword(login, EncryptionUtils.base64encode(pwd));
         } catch (Exception ex) {
             Logger.getLogger(UsersServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
