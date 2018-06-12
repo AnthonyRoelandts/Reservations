@@ -17,8 +17,8 @@
                 <div class ="row">
                     <div class ="col-md-2">
                         <form:label path="login">Entrez votre nom de compte</form:label>
-                    </div>
-                    <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
                         <form:input id="login" name="login" path="login" />
                     </div>
                     <div class="col-md-8"></div>
@@ -26,8 +26,8 @@
                 <div class="row">
                     <div class="col-md-2">
                         <form:label path="password">Entrez votre mot de passe</form:label>
-                    </div>
-                    <div class="col-md-2">
+                        </div>
+                        <div class="col-md-2">
                         <form:password id="password" name="password" path="password" />
                     </div>
                     <div class="col-md-8"></div>
@@ -39,6 +39,12 @@
                     <div class="col-md-10"></div>
                 </div>
             </form:form>
+            <c:if test="${null != errorMessage}">
+                <div style="color:red"><c:out value = "${errorMessage}" /></div>
+            </c:if>
+            <c:if test="${null != loggedMessage}">
+                <div style="color:green;"><c:out value = "${loggedMessage}" /></div>
+            </c:if>
         </div>
     </body>
 </html>

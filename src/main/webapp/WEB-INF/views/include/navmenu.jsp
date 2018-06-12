@@ -10,7 +10,12 @@
             <%-- add class="active" to li to make current page highlighted--%>
             <li><a href="${baseURL}">Accueil</a></li>
             <li><a href="${baseURL}/artists">Artistes</a></li>
-            <li><a href="${baseURL}/login">Login</a></li>
+            <c:if test="${null != loggedUser}">
+                <li><a href="${baseURL}/logout">Se déconnecter</a></li>
+            </c:if>
+            <c:if test="${null == loggedUser}">
+                <li><a href="${baseURL}/login">Se connecter</a></li>
+            </c:if>
             <li><a href="${baseURL}/register">S'enregistrer</a></li>
         </ul>
     </div>

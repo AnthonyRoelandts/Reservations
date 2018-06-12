@@ -47,9 +47,10 @@ public class UserController {
         //validate user, depending of boolean set user in session or set error msg
         Users u = usersService.getUserByLoginAndDecryptedPassword(users.getLogin(), users.getPassword());
         if (null == u) {
-            model.addAttribute("errorMessage", "Login ou mot de passe ?rron?.");
+            model.addAttribute("errorMessage", "Login ou mot de passe incorrect.");
         } else {
             model.addAttribute("loggedUser", u);
+            model.addAttribute("loggedMessage", "Connection ok");
         }
         model.addAttribute("userToLogin", new Users());
         return "login";
@@ -73,6 +74,14 @@ public class UserController {
         model.addAttribute("userToRegister", new Users());
         model.addAttribute("languages", getLanguages());
         return "register";
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(Model model) {
+        if (model.containsAttribute("loggedUser")) {
+            model.asMap().remove("loggedUser");
+        }
+        return "index";
     }
 
     private boolean isUserValid(Users users) {
