@@ -1,5 +1,6 @@
 package com.icc.reservations.model;
 
+import com.icc.reservations.model.Categorie;
 import com.icc.reservations.model.Locations;
 import com.icc.reservations.model.Representations;
 import java.math.BigDecimal;
@@ -8,11 +9,12 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-06-12T22:15:29")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-06-14T19:38:15")
 @StaticMetamodel(Shows.class)
 public class Shows_ { 
 
     public static volatile SingularAttribute<Shows, Boolean> bookable;
+    public static volatile SingularAttribute<Shows, Categorie> categorieId;
     public static volatile SingularAttribute<Shows, String> posterUrl;
     public static volatile SingularAttribute<Shows, BigDecimal> price;
     public static volatile SingularAttribute<Shows, Locations> locationId;

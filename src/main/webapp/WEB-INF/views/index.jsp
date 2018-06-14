@@ -50,5 +50,10 @@
                 </div>
             </div>
         </div>
+        <div id="messages">
+            <c:if test="${null != errorMessage}"> <p style="color:red;"><c:out value="${errorMessage}"/> </p></c:if>
+            <c:if test="${null != successMessage}"> <p style="color:green;"><c:out value="${successMessage}"/> </p></c:if>
+
+        </div>
     </body>
 </html>

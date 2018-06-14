@@ -11,6 +11,7 @@
     <class>com.icc.reservations.spring.model.Users</class>
     <class>com.icc.reservations.spring.model.Locations</class>
     <class>com.icc.reservations.spring.model.Roles</class>
+    <class>com.icc.reservations.model.Categorie</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/reservations?zeroDateTimeBehavior=convertToNull"/>

@@ -61,6 +61,9 @@ public class Shows implements Serializable {
     @JoinColumn(name = "location_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Locations locationId;
+    @JoinColumn(name = "categorie_id", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private Categorie categorieId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "showId")
     private Collection<Representations> representationsCollection;
 
@@ -143,6 +146,14 @@ public class Shows implements Serializable {
 
     public void setRepresentationsCollection(Collection<Representations> representationsCollection) {
         this.representationsCollection = representationsCollection;
+    }
+
+    public Categorie getCategorieId() {
+        return categorieId;
+    }
+
+    public void setCategorieId(Categorie categorieId) {
+        this.categorieId = categorieId;
     }
 
     @Override
